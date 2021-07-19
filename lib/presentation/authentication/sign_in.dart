@@ -13,7 +13,7 @@ class SignInPage extends StatefulWidget {
   final Function togglesignin;
   final Function togglesignup;
   SignInPage({this.togglelogin, this.togglesignin, this.togglesignup});
-  
+
   @override
   _SignInPageState createState() => _SignInPageState();
 }
@@ -118,6 +118,7 @@ class _SignInPageState extends State<SignInPage> {
                           if (_formkey.currentState.validate()) {
                             dynamic result = await _authServices
                                 .signinwithemailandpass(email, password);
+                            print('line after signin');
                             if (result == null) {
                               setState(() {
                                 error = 'Enter valid email id and password';

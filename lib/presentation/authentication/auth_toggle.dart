@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movieapp/presentation/authentication/sign_in.dart';
 import 'package:movieapp/presentation/authentication/sign_up.dart';
 import 'package:movieapp/presentation/core/login_option_screen.dart';
+import 'package:movieapp/presentation/home/homepage.dart';
 
 class AuthToggle extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class _AuthToggleState extends State<AuthToggle> {
   bool loginoptionspage = true;
   bool signinpage = false;
   bool signuppage = false;
+  bool homepage = false;
   void togglelogin() {
     setState(() {
       return loginoptionspage = !loginoptionspage;
@@ -50,6 +52,8 @@ class _AuthToggleState extends State<AuthToggle> {
         togglesignin: togglesignin,
         togglesignup: togglesignup,
       );
+    } else if (homepage == true) {
+      return HomePage();
     }
   }
 }

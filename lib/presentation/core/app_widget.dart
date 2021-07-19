@@ -27,6 +27,9 @@ class AppWidget extends StatelessWidget {
               ),
               labelStyle: TextStyle(fontWeight: FontWeight.bold)),
         ),
+        routes: {
+          '/login': (context) => Wrapper(),
+        },
         home: Wrapper(),
       ),
     );

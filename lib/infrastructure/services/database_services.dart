@@ -1,20 +1,43 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:movieapp/infrastructure/models/hospital_data.dart';
 
 class Databaseservices {
   String uid;
   Databaseservices({this.uid});
 
-  final CollectionReference moviecollection =
-      FirebaseFirestore.instance.collection('movies');
+  final CollectionReference hospitaldatacollection =
+      FirebaseFirestore.instance.collection('Hospital data');
 
-  Future updatedata(String name, String movie1, String movie2, int rating1,
-      int rating2) async {
-    return await moviecollection.doc(uid).set({
+  final CollectionReference usercollection =
+      FirebaseFirestore.instance.collection('User info');
+
+  Future updatedata(String name, String hospname, String hosploctn,
+      String phoneno, String itemno, String itemtype) async {
+    return await hospitaldatacollection.doc().set({
       'name': name,
-      'movie1': movie1,
-      'movie2': movie2,
-      'rating1': rating1,
-      'rating2': rating2,
+      'hospname': hospname,
+      'hosploctn': hosploctn,
+      'phoneno': phoneno,
+      'itemno': itemno,
+      'itemtype': itemtype,
     });
+  }
+
+  List<HospData> _hospdatafromsnapshot(QuerySnapshot snapshot) {
+    return snapshot.docs.map((doc) {
+      Map data = doc.data();
+      return HospData(
+        name: data['name'],
+        hospname: data['hospname'],
+        hosploctn: data['hosploctn'],
+        phoneno: data['phoneno'],
+        itemno: data['itemno'],
+        itemtype: data['itemtype'],
+      );
+    }).toList();
+  }
+
+  Stream<List<HospData>> get hospdata {
+    return hospitaldatacollection.snapshots().map(_hospdatafromsnapshot);
   }
 }
