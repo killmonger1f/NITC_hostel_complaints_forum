@@ -13,13 +13,13 @@ class _HomepageListState extends State<HomepageList> {
   Widget build(BuildContext context) {
     final hospdata = Provider.of<List<HospData>>(context) ?? [];
 
-    hospdata.forEach((element) {
-      print(element.hosploctn);
-      print(element.name);
-      print(element.hospname);
-      print(element.itemno);
-      print(element.phoneno);
-    });
+    // hospdata.forEach((element) {
+    //   print(element.hosploctn);
+    //   print(element.name);
+    //   print(element.hospname);
+    //   print(element.itemno);
+    //   print(element.phoneno);
+    // });
     return Center(
       child: Container(
         color: Colors.white,
