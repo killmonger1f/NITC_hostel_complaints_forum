@@ -1,16 +1,14 @@
-# movieapp
+# hostel complaints forum
 
-A new Flutter project.
+NITC Complaints Filing System v_0.1
 
-## Getting Started
+This webapp can be used to add and view complaints registered by students of NITC.
+We used dart as our primary language via Flutter. We used Firebase for Authentication and Firestore as the database.
 
-This project is a starting point for a Flutter application.
+We used flutter for our front end because with the same code we will be able to develop apps for different platforms. Which makes it one of the most convenient tools to use.
 
-A few resources to get you started if this is your first Flutter project:
+Firebase/Firestore being a noSQL database makes it easy for us to maintain and update the data. Also the security features offered by them are also very good.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+Thankyou
