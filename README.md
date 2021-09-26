@@ -1,4 +1,4 @@
-# hostel complaints forum
+# Hostel Complaints Forum
 
 NITC Complaints Filing System v_0.1
 
